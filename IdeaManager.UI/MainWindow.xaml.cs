@@ -16,8 +16,9 @@ namespace IdeaManager.UI;
 /// </summary>
 public partial class MainWindow : Window
 {
-    public MainWindow()
+    public MainWindow(IdeaFormViewModel viewModel)
     {
         InitializeComponent();
+        DataContext = viewModel;
     }
 }

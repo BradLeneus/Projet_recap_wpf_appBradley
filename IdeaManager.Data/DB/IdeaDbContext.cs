@@ -8,9 +8,10 @@ namespace IdeaManager.Data.Db
     {
         public IdeaDbContext(DbContextOptions<IdeaDbContext> options) : base(options) { }
 
-        public DbSet<Idea> Ideas => Set<Idea>();
-        public DbSet<User> Users => Set<User>();
-        public DbSet<Vote> Votes => Set<Vote>();
+        public DbSet<Idea> Ideas { get; set; }
+        public DbSet<User> Users { get; set; }
+        public DbSet<Vote> Votes { get; set; }
+        public DbSet<Project> Projects { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -18,7 +19,10 @@ namespace IdeaManager.Data.Db
             modelBuilder.ApplyConfiguration(new ProjectConfiguration());
             modelBuilder.ApplyConfiguration(new UserConfiguration());
             modelBuilder.ApplyConfiguration(new VoteConfiguration());
+
+            base.OnModelCreating(modelBuilder);
         }
     }
 }
+
 
