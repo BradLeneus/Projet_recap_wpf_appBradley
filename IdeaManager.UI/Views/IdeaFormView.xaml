@@ -16,4 +16,8 @@
                 IsEnabled="{Binding SubmitCommand.CanExecute(null)}"
                 Margin="0 20 0 0" Height="40"/>
 	</StackPanel>
+	<UserControl.Resources>
+		<local:StringToVisibilityConverter x:Key="StringToVisibilityConverter"/>
+	</UserControl.Resources>
+	
 </UserControl>
